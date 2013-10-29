@@ -7,8 +7,9 @@ CREATE TABLE tb_Cidade (
 
 CREATE TABLE TB_Trecho (
   codTrecho INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  distancia INTEGER UNSIGNED NULL,
-  valor FLOAT NULL,
+  cidade_origem  INTEGER UNSIGNED NOT NULL,
+  cidade_destino INTEGER UNSIGNED NOT NULL,
+  distancia INTEGER UNSIGNED NULL,  
   PRIMARY KEY(codTrecho)
 );
 
@@ -91,18 +92,4 @@ CREATE TABLE TB_Bilhete (
       ON UPDATE NO ACTION
 );
 
-CREATE TABLE tb_CidadeTrecho (
-  codCidade INTEGER UNSIGNED NOT NULL,
-  codTrecho INTEGER UNSIGNED NOT NULL,
-  orientacao VARCHAR UNSIGNED NULL,
-  PRIMARY KEY(codCidade, codTrecho),
-  FOREIGN KEY(codCidade)
-    REFERENCES tb_Cidade(codCidade)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION,
-  FOREIGN KEY(codTrecho)
-    REFERENCES TB_Trecho(codTrecho)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
 
