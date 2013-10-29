@@ -4,6 +4,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Voo {
+public class Voo implements Serializable {
 
     @Id
     @GeneratedValue
