@@ -20,12 +20,6 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
 
-//            ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().configure().buildServiceRegistry();
-//            MetadataSources metadataSources = new MetadataSources(serviceRegistry);
-//            metadataSources.addAnnotatedClass(Cidade.class);
-//            Metadata metadata = metadataSources.buildMetadata();
-//            return metadata.buildSessionFactory();
-
             Configuration config = new Configuration();
             config.configure();
             ServiceRegistryBuilder srBuilder = new ServiceRegistryBuilder();

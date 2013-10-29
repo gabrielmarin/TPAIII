@@ -4,13 +4,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Trecho{
+public class Trecho implements Serializable{
 
     @Id
     @GeneratedValue
