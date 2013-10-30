@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Voo implements Serializable {
+public class Voo{
 
     @Id
     @GeneratedValue

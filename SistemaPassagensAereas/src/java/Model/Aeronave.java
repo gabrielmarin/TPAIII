@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Aeronave implements Serializable {
+public class Aeronave  {
 
     @Id
     @GeneratedValue
