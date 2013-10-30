@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class Aeroporto implements Serializable {
+public class Aeroporto {
 
     
     @Id

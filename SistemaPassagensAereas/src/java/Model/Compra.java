@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Compra implements Serializable {
+public class Compra {
 
     @Id
     @GeneratedValue
