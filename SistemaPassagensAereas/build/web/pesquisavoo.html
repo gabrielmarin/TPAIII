@@ -11,100 +11,79 @@ Released   : 20130920
 
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
-</head>
-<body>
-    <!--Menu-->
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="#">Decolando</a></h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Passagens</a></li>
-				<li><a href="#" accesskey="3" title="">Voos</a></li>
-				<li><a href="#" accesskey="4" title="">Aeronaves</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div id="featured">&nbsp;</div>
-<div id="wrapper">
-	<div id="page" class="container">
-		<div id="content">
-			<div class="title">
-				<h2>Pesquisar voo</h2>
-				<span class="byline">Preencha 1 ou mais campos</span> 
-                        </div>
-                    <table>
-                        <tr>    
-                            <td>
-                                <strong>Número do voo </strong><br/>
-                                <input type="text" name ="numVoo" />  <br/>
-                            </td>
-                        </tr>
-                        <tr>    
-                            <td>
-                                <strong>Origem </strong><br/>
-                                <select>
-                                    <option value="default"></option>
-                                    <option value="sp">São Paulo</option>
-                                    <option value="rj">Rio de Janeiro</option>
-                                    <option value="ce">Fortaleza</option>
-                                    <option value="rn">Natal</option>
-                                    <option value="rs">Porto Alegre</option>
-                                    <option value="df">Brasília</option>
-                                </select>
-                            </td>
-                            <td>
-                                <strong>Destino </strong><br/>
-                                <select>
-                                    <option value="default"></option>
-                                    <option value="sp">São Paulo</option>
-                                    <option value="rj">Rio de Janeiro</option>
-                                    <option value="ce">Fortaleza</option>
-                                    <option value="rn">Natal</option>
-                                    <option value="rs">Porto Alegre</option>
-                                    <option value="df">Brasília</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Data (dd/mm/aaaa):
-                            </td>
-                        </tr>
-                        <tr>    
-                            <td>
-                                <strong>Ida </strong><br/>
-                                <input type="text" name ="dtPartida" />  <br/>
-                            </td>
-                        </tr>
-                        <tr>    
-                            <td>
-                                <strong>Preço </strong><br/>
-                                <input type="text" name ="preco" />  <br/>
-                            </td>
-                        </tr>
-                    </table>
+    </head>
+    <body>
+        <!--Menu-->
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a href="#">Decolando</a></h1>
                 </div>
-	</div>
-</div>
-<div id="copyright" class="container">
-	<p>Copyright (c) 2013 Mackenzie 6J. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
-</div>
-</body>
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
+                        <li><a href="#" accesskey="2" title="">Passagens</a></li>
+                        <li><a href="#" accesskey="3" title="">Voos</a></li>
+                        <li><a href="#" accesskey="4" title="">Aeronaves</a></li>
+                        <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="featured">&nbsp;</div>
+        <div id="wrapper">
+            <div id="page" class="container">
+                <div id="content">
+                    <div class="title">
+                        <h2>Pesquisar voo</h2>
+                        <span class="byline">Preencha 1 ou mais campos</span> 
+                    </div>
+                    <form action ="resultVoos.jsp" method="get">
+                        <br/>Número do voo <br/>
+                        <input type="text" name ="numVoo" />  <br/>                         
+                        <strong>Origem </strong><br/>
+                        <select name="origem">
+                            <option value="default"></option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="CE">Fortaleza</option>
+                            <option value="RN">Natal</option>
+                            <option value="RS">Porto Alegre</option>
+                            <option value="DF">Brasília</option>
+                        </select>                           
+                        <br/><strong>Destino </strong><br/>
+                        <select name="destino">
+                            <option value="default"></option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="CE">Fortaleza</option>
+                            <option value="RN">Natal</option>
+                            <option value="RS">Porto Alegre</option>
+                            <option value="DF">Brasília</option>
+                        </select>                       
+                        <br/>Data (dd/mm/aaaa):                      <br/>
+                        <strong>Ida </strong><br/>
+                        <input type="text" name ="dtPartida" />  <br/>                       
+                        <strong>Preço </strong><br/>
+                        <input type="text" name ="preco" />  <br/>
+                        <input type="submit" value ="Pesquisar Voo"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="copyright" class="container">
+            <p>Copyright (c) 2013 Mackenzie 6J. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+        </div>
+    </body>
 </html>
