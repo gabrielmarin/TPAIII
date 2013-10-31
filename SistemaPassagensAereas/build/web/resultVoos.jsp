@@ -44,16 +44,6 @@
                 <h3>Voos</h3>
                 <div class="CSSTableGenerator" >
                     <table width="80%">
-                        <%
-                            int numVoo = Integer.parseInt(request.getParameter("numVoo"));
-
-                            List teste = new VooRepository().GetVoos(numVoo);
-                            for (Object voo : teste) {
-                                Voo flight = (Voo) voo;
-                                String cityOrigem = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeOrigem());
-                                String cityDestino = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeDestino());
-
-                        %>
                         <tr>
                             <td>
                                 Nº do Voo
@@ -73,11 +63,40 @@
                             <td >
                                 Duracao
                             </td>
+                            <td >
+                                Aeronave
+                            </td>
                             <td>
                                 Assentos Classe Econômica
                             </td>
-
+                            <td>
+                                Assentos Primeira Classe
+                            </td>
+                            <td>
+                                Distância
+                            </td>
+                            <td>
+                                Preço
+                            </td>
                         </tr>
+                        <%
+                            //inicializar
+                            int numVoo = 0;
+                            String sorigem = request.getParameter("origem");
+                            String destino = request.getParameter("destino");
+                            //Get Parameters
+                            String snumVoo = request.getParameter("numVoo");
+                            //Consistency
+                            if (snumVoo != "") {
+                                numVoo = Integer.parseInt(snumVoo);
+                            }
+
+                            List teste = new VooRepository().GetVoos(numVoo, sorigem, destino);
+                            for (Object voo : teste) {
+                                Voo flight = (Voo) voo;
+                                String cityOrigem = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeOrigem());
+                                String cityDestino = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeDestino());
+                        %>
                         <tr>
                             <td >
                                 <%=flight.getNumVoo()%>
@@ -98,7 +117,19 @@
                                 <%=flight.getDuracao()%> hora
                             </td>
                             <td>
+                                <%=flight.getAeronave().getModeloAeronave()%>
+                            </td>
+                            <td>
                                 <%=flight.getAssentosEconDisponiveis()%>
+                            </td>
+                            <td>
+                                <%=flight.getAssentosPClasDisponiveis()%>
+                            </td>                            
+                            <td>
+                                <%=flight.getTrecho().getDistancia()%>
+                            </td>
+                            <td>
+                                R$<%=flight.getTrecho().getDistancia()*0.50%>
                             </td>
                         </tr>
                         <%    }%>
