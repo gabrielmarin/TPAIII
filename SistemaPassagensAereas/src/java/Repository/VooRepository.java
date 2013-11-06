@@ -6,6 +6,9 @@ package Repository;
 
 import Model.Voo;
 import Util.HibernateUtil;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,5 +36,49 @@ public class VooRepository {
             session.close();
         }
         
+    }
+     public List GetAllVoos() {
+
+        Session session = null;
+        try {
+            SessionFactory sf = HibernateUtil.getSessionFactory();
+            session = sf.openSession();
+            session.beginTransaction();
+
+            Criteria criteria = session.createCriteria(Voo.class);
+            List lista = criteria.list();
+            
+            return lista;
+
+        } catch (Exception e) {
+            session.close();
+        }
+        return null;
+    }
+    
+    public List GetVoos(int numVoo, String origem, String destino) {
+
+        Session session = null;
+        try {
+            SessionFactory sf = HibernateUtil.getSessionFactory();
+            session = sf.openSession();
+            session.beginTransaction();
+
+            Criteria criteria = session.createCriteria(Voo.class);
+            Query query = null;
+            List list = null;
+            if(numVoo !=0){
+                query = session.createQuery("from Voo where numVoo = :nVoo ");
+                query.setParameter("nVoo", numVoo);
+                list = query.list();
+            }else{
+                list = GetAllVoos();
+            }
+            return list;
+
+        } catch (Exception e) {
+            session.close();
+        } 
+        return null;
     }
 }
