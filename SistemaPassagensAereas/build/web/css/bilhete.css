@@ -1,0 +1,119 @@
+/* 
+    Document   : bilhete
+    Created on : 24/11/2013, 14:17:56
+    Author     : gabriel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.containerBilhete
+{
+    width: 600px;
+    height: 250px;
+    border: #666 solid thin;
+    -webkit-box-shadow: #ccc 5px 5px 10px;    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -moz-box-shadow: #6F6F6F 5px 5px 5px;
+}
+
+.bilheteLeft 
+{
+    position: relative;
+    float: left;
+    width: 400px;
+    height: 250px;
+    border-right: #D1CFCE dashed 2px;
+}
+
+.bilheteRight 
+{
+    position: relative;
+    float: right;
+    width: 200px;
+    height: 250px;    
+}
+
+.bilheteTitle
+{
+    padding: 10px 0 0 15px;
+    float: left;
+}
+
+.bilheteTitle span
+{
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;    
+}
+
+.bilheteSummary 
+{
+    width: 190px;
+    height: 240px;
+    padding: 5px 5px 5px 5px;
+    float: right;
+}
+
+.bilheteFieldset
+{    
+    height: 20px;
+    color: #1c94c4;
+    -webkit-border-radius: 3px;
+}
+
+.bilheteFieldset legend 
+{
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.nome
+{
+    width: 320px;    
+    float: left;
+    padding: 10px 0 0 10px;
+}
+.idade
+{
+    width: 50px;    
+    float: left;  
+    padding: 10px 0 0 0;
+}
+.trecho
+{
+    width: 389px;    
+    float: left;  
+    padding: 10px 0 0 10px;
+}
+.classe
+{
+    width: 150px;    
+    float: left;  
+    padding: 10px 0 0 10px;
+}
+.dataVoo
+{
+    width: 200px;    
+    float: left;  
+    padding: 10px 0 0 0;
+}
+.horaVoo
+{
+    width: 150px;    
+    float: left;  
+    padding: 10px 0 0 10px;
+}
+.numVoo
+{
+    width: 90px;    
+    float: left;  
+    padding: 10px 0 0 0;
+}
+.assentoEspecial
+{
+    width: 149px;    
+    float: left;  
+    padding: 10px 0 0 0; 
+}
