@@ -81,15 +81,20 @@ public class AdicionarVooServlet extends HttpServlet {
         Aeronave aeronave = new Aeronave();
         Trecho trecho = new Trecho();
         Voo voo = new Voo();
-
+        
+        String dtPartida = request.getParameter("dtPartida");
+        String dtChegada = request.getParameter("dtChegada");
+        String hrPartida = request.getParameter("hrPartida");
+        String hrChegada = request.getParameter("hrChegada");
+        
         int aeronaveId = Integer.parseInt(request.getParameter("aeronave"));
         int trechoId = Integer.parseInt(request.getParameter("trecho"));
         int assentosEconDisp = Integer.parseInt(request.getParameter("assentosEconDisponiveis"));
         int assentosPClasDisp = Integer.parseInt(request.getParameter("assentosPClasDisponiveis"));
         int numVoo = Integer.parseInt(request.getParameter("numVoo"));
         int duracao = Integer.parseInt(request.getParameter("duracao"));
-        Date partida = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("partida"));
-        Date chegada = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("chegada"));
+        Date partida = (Date) new SimpleDateFormat("dd/MM/yyyy HH").parse(dtPartida + " " + hrPartida);
+        Date chegada = (Date) new SimpleDateFormat("dd/MM/yyyy HH").parse(dtChegada + " " + hrChegada);
 
         aeronave.setId(aeronaveId);
         trecho.setId(trechoId);

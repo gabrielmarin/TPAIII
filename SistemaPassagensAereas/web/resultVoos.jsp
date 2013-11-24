@@ -1,5 +1,7 @@
 
 <%@page import="Repository.CidadeRepository"%>
+<%@page import="Repository.AeroportoRepository"%>
+<%@page import="Model.Aeroporto"%>
 <%@page import="Model.Cidade"%>
 <%@page import="Model.Voo"%>
 <%@page import="java.util.List"%>
@@ -49,10 +51,10 @@
                                 Nº do Voo
                             </td>
                             <td>
-                                Origem
+                                Origem / Aeroporto
                             </td>
                             <td>
-                                Destino
+                                Destino / Aeroporto
                             </td>
                             <td>
                                 Partida
@@ -96,16 +98,18 @@
                                 Voo flight = (Voo) voo;
                                 String cityOrigem = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeOrigem());
                                 String cityDestino = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeDestino());
+                                String AeroOrigem = new AeroportoRepository().GetAeroportoByIdCity(flight.getTrecho().getIdCidadeOrigem());
+                                String AeroDestino = new AeroportoRepository().GetAeroportoByIdCity(flight.getTrecho().getIdCidadeDestino());
                         %>
                         <tr>
                             <td >
                                 <%=flight.getNumVoo()%>
                             </td>
                             <td>
-                                <%=cityOrigem%>
+                                <%=cityOrigem%> / <%=AeroOrigem%>
                             </td>
                             <td>
-                                <%=cityDestino%>
+                                <%=cityDestino%> / <%=AeroDestino%>
                             </td>
                             <td>
                                 <%=flight.getPartida()%>
