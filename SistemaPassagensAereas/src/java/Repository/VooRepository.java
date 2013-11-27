@@ -18,8 +18,8 @@ import org.hibernate.Transaction;
  * @author Gabriel
  */
 public class VooRepository {
-    
-     public void AdicionarVoo(Voo voo) throws Exception{
+
+    public void AdicionarVoo(Voo voo) throws Exception {
 
         Session session = null;
         try {
@@ -28,16 +28,17 @@ public class VooRepository {
             Transaction t = session.beginTransaction();
             session.saveOrUpdate(voo);
             t.commit();
-            
+
 
         } catch (Exception e) {
             session.close();
         } finally {
             session.close();
         }
-        
+
     }
-     public List GetAllVoos() {
+
+    public List GetAllVoos() {
 
         Session session = null;
         try {
@@ -47,7 +48,7 @@ public class VooRepository {
 
             Criteria criteria = session.createCriteria(Voo.class);
             List lista = criteria.list();
-            
+
             return lista;
 
         } catch (Exception e) {
@@ -55,7 +56,7 @@ public class VooRepository {
         }
         return null;
     }
-    
+
     public List GetVoos(int numVoo, String origem, String destino) {
 
         Session session = null;
@@ -67,18 +68,46 @@ public class VooRepository {
             Criteria criteria = session.createCriteria(Voo.class);
             Query query = null;
             List list = null;
-            if(numVoo !=0){
+            if (numVoo != 0) {
                 query = session.createQuery("from Voo where numVoo = :nVoo ");
                 query.setParameter("nVoo", numVoo);
                 list = query.list();
-            }else{
+            } else {
                 list = GetAllVoos();
             }
             return list;
 
         } catch (Exception e) {
             session.close();
-        } 
+        }
+        return null;
+    }
+
+    public Voo GetVooByNum(int numVoo) {
+
+        Session session = null;
+        try {
+            SessionFactory sf = HibernateUtil.getSessionFactory();
+            session = sf.openSession();
+            session.beginTransaction();
+
+            Criteria criteria = session.createCriteria(Voo.class);
+            Query query = null;
+            List list = null;
+            Voo flight = null;
+            query = session.createQuery("from Voo where numVoo = :nVoo ");
+            query.setParameter("nVoo", numVoo);
+            list = query.list();
+            
+            String strAero = null;
+            for (Object voo : list) {
+                flight = (Voo) voo;
+            }
+            return flight;
+
+        } catch (Exception e) {
+            session.close();
+        }
         return null;
     }
 }

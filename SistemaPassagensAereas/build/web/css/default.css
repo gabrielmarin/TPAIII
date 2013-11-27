@@ -384,11 +384,14 @@
 	#banner .box-left
 	{
 		float: left;
+                width: 100px;
 	}
 
 	#banner .box-right
 	{
 		float: right;
+                width: 500px;
+                text-align: left;
 	}
 	
 	#banner h2
@@ -577,4 +580,3 @@
 	{
 		float: right;
 	}
-
