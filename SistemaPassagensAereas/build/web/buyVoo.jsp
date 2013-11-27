@@ -36,11 +36,7 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
-                        <li><a href="#" accesskey="2" title="">Passagens</a></li>
-                        <li><a href="#" accesskey="3" title="">Voos</a></li>
-                        <li><a href="#" accesskey="4" title="">Aeronaves</a></li>
-                        <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+                        <%@include file="menu.jsp" %>
                     </ul>
                 </div>
             </div>
@@ -70,14 +66,32 @@
                 </div>
                 <div style="float: right; width: 70%;">
                     <h3>Informações do Passageiro</h3>
-                    <form action ="" method="get">
-                        Nome <input type="text" size="50" name ="nomePassageiro" />  <br/>
-                        Idade <input type="text" size="10" name ="idadePassageiro" />  <br/>
-                        RG <input type="text" id="dtPartida" name="RG" class="required"></input><br/>
-                        <input type="checkbox" name="assentoEspecial" /> Assento Especial &nbsp&nbsp&nbsp
-                        <input type="checkbox" name="refeicaoEspecial" /> Refeição Especial<br /> <br />
+                    <form action ="EmissaoBilhete" method="post">
+                        <div>Nome</div>
+                        <input type="text" size="50" name ="nomePassageiro" />  <br/>
+                        <div>Idade</div> 
+                        <input type="text" size="10" name ="idadePassageiro" />  <br/>
+                        <div>RG</div>
+                        <input type="text" id="dtPartida" name="RG" class="required"></input><br/>
+                        <div>Classe</div>
+                        <select name="classe" >
+                            <option value="" selected>(Selecione)</option>
+                            <option value="Primeira">Primeira</option>
+                            <option value="Economica">Econômica</option>
+                        </select>
+                        <br/>
+                        <input type="checkbox" name="assentoEspecial" /> Assento Especial &nbsp&nbsp&nbsp    
+                        <br/>
+                        <br/>
+                        <input type="hidden" value="<%=flight.getId()%>" name="numVoo"/>
+                        <input type="hidden" value="<%=cityOrigem%>" name="cidadeOrigem"/>
+                        <input type="hidden" value="<%=cityDestino%>" name="cidadeDestino"/>
+                        <input type="hidden" value="<%=AeroOrigem%>" name="aeroportoOrigem"/>
+                        <input type="hidden" value="<%=AeroDestino%>" name="aeroportoDestino"/>
+                        <input type="hidden" value="<%=newDatePart%>" name="dtPartida"/>
+                        <input type="hidden" value="<%=newDateCheg%>" name="dtChegada"/>
                         
-                        <a href="pesquisavoo.html" class="button">Comprar</a>
+                        <input type="submit" class="button" value="Comprar"/>
                     </form>
                 </div>
             </div>

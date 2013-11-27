@@ -65,20 +65,20 @@
                             <div class="classe">
                                 <fieldset class="bilheteFieldset">
                                     <legend>Classe</legend>
-                                    <span></span>
+                                    <span><%=request.getParameter("classe")%></span>
                                 </fieldset>                                    
                             </div>
                             <br/>
                             <div class="dataVoo">
                                 <fieldset class="bilheteFieldset">
                                     <legend>Data de Embarque</legend>
-                                    <span><%=request.getParameter("dtPartida")%></span>
+                                    <span><%=request.getAttribute("dtPartida")%></span>
                                 </fieldset>                                    
                             </div>
                             <div class="horaVoo">
                                 <fieldset class="bilheteFieldset">
                                     <legend>Hora Embarque</legend>
-                                    <span><%=request.getParameter("dtPartida")%></span>
+                                    <span><%=request.getAttribute("hrPartida")%></span>
                                 </fieldset>                                    
                             </div>                            
                             <div class="numVoo">
@@ -90,7 +90,7 @@
                             <div class="assentoEspecial">
                                 <fieldset class="bilheteFieldset">
                                     <legend>Assento Especial</legend>
-                                    <span><%=request.getParameter("assentoEspecial")%></span>
+                                    <span><%=request.getAttribute("assentoEspecial")%></span>
                                 </fieldset>                                    
                             </div> 
                         </div>
@@ -108,7 +108,7 @@
                                     </div>
                                     <div style="display: inline-block; float:right;">
                                         <span class="destaqueTitle">Classe</span>
-                                        <span class="destaqueDados"><%=request.getParameter("")%></span>
+                                        <span class="destaqueDados"><%=request.getParameter("classe")%></span>
                                     </div>
                                     <br/>
                                     <div style="display: inline-block;">
@@ -118,11 +118,11 @@
                                     <br/>
                                     <div style="display: inline-block;">
                                         <span class="destaqueTitle">Data de Embarque</span>
-                                        <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
+                                        <span class="destaqueDados"><%=request.getAttribute("dtPartida")%></span>
                                     </div>  
                                     <div style="display: inline-block;">
                                         <span class="destaqueTitle">Hora Embarque</span>
-                                        <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
+                                        <span class="destaqueDados"><%=request.getAttribute("hrPartida")%></span>
                                     </div>  
                                     <br/>
                                     <div style="display: inline-block;">
@@ -131,7 +131,7 @@
                                     </div>  
                                     <div style="display: inline-block; float:right;">
                                         <span class="destaqueTitle">Assento Especial</span>      
-                                        <span class="destaqueDados"><%=request.getParameter("assentoEspecial")%></span>
+                                        <span class="destaqueDados"><%=request.getAttribute("assentoEspecial")%></span>
                                     </div>  
                                 </div>                                
                             </div>
@@ -152,7 +152,7 @@
                         function printSelection(node) {
 
                             var content = node.innerHTML;
-                            var pwin = window.open('', 'print_content', 'width=100,height=100');
+                            var pwin = window.open('', 'print_content');
 
                             pwin.document.open();
                             pwin.document.write('<html><link rel="stylesheet" type="text/css" href="css/bilhete.css"/><body onload="window.print()">' + content + '</body></html>');
