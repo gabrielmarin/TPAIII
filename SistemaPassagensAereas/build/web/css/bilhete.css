@@ -27,10 +27,9 @@
 }
 
 .bilheteRight 
-{
-    position: relative;
+{    
     float: right;
-    width: 200px;
+    width: 190px;
     height: 250px;    
 }
 
@@ -56,9 +55,9 @@
 }
 
 .bilheteFieldset
-{    
-    height: 20px;
-    color: #1c94c4;
+{   
+    height: 25px;    
+    color: #1c94c4;    
     -webkit-border-radius: 3px;
 }
 
@@ -68,52 +67,61 @@
     color: #666;
     font-weight: bold;
 }
+.bilheteFieldset span {    
+    font-size: 11px;       
+}
+
+.destaqueTitle
+{
+    font-weight: bold;
+    display: block;
+}
 
 .nome
 {
     width: 320px;    
     float: left;
-    padding: 10px 0 0 10px;
+    padding: 5px 0 0 10px;
 }
 .idade
 {
     width: 50px;    
     float: left;  
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
 }
 .trecho
 {
     width: 389px;    
     float: left;  
-    padding: 10px 0 0 10px;
+    padding: 5px 0 0 10px;
 }
 .classe
 {
     width: 150px;    
     float: left;  
-    padding: 10px 0 0 10px;
+    padding: 5px 0 0 10px;
 }
 .dataVoo
 {
     width: 200px;    
     float: left;  
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
 }
 .horaVoo
 {
     width: 150px;    
     float: left;  
-    padding: 10px 0 0 10px;
+    padding: 5px 0 0 10px;
 }
 .numVoo
 {
     width: 90px;    
     float: left;  
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
 }
 .assentoEspecial
 {
     width: 149px;    
     float: left;  
-    padding: 10px 0 0 0; 
+    padding: 5px 0 0 0; 
 }

@@ -15,11 +15,11 @@
 
     </head>
     <body>
-     <% String trecho = request.getParameter("cidadeOrigem") + " - "
-                    + request.getParameter("aeroportoOrigem") + " /  " 
+        <% String trecho = request.getParameter("cidadeOrigem") + " - "
+                    + request.getParameter("aeroportoOrigem") + " /  "
                     + request.getParameter("cidadeDestino") + " - "
                     + request.getParameter("aeroportoDestino");
-     %>
+        %>
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
@@ -37,86 +37,108 @@
                     <div class="title">
                         <h2>Emissão do Bilhete</h2>                        
                     </div>
-                    <div class="containerBilhete">
+                    <div class="containerBilhete" id="bilhete">
                         <div class="bilheteLeft">
                             <div class="bilheteTitle">
                                 <span>Decolando</span>
-                              </div>  
-                                <div class="nome">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Nome</legend>
-                                         <span><%=request.getParameter("nomePassageiro")%></span>
-                                    </fieldset>                                    
-                                </div>
-                                 <div class="idade">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Idade</legend>
-                                        <span><%=request.getParameter("idadePassageiro")%></span>
-                                    </fieldset>                                    
-                                </div>
+                            </div>  
+                            <div class="nome">
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Nome</legend>
+                                    <span><%=request.getParameter("nomePassageiro")%></span>
+                                </fieldset>                                    
+                            </div>
+                            <div class="idade">
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Idade</legend>
+                                    <span><%=request.getParameter("idadePassageiro")%></span>
+                                </fieldset>                                    
+                            </div>
                             <br/>
-                             <div class="trecho">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Trecho</legend>
-                                        <span><%=trecho%></span>
-                                    </fieldset>                                    
-                             </div>
+                            <div class="trecho">
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Trecho</legend>
+                                    <span><%=trecho%></span>
+                                </fieldset>                                    
+                            </div>
                             <br/>
                             <div class="classe">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Classe</legend>
-                                        <span></span>
-                                    </fieldset>                                    
-                             </div>
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Classe</legend>
+                                    <span></span>
+                                </fieldset>                                    
+                            </div>
                             <br/>
                             <div class="dataVoo">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Data de Embarque</legend>
-                                        <span><%=request.getParameter("dtPartida")%></span>
-                                    </fieldset>                                    
-                             </div>
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Data de Embarque</legend>
+                                    <span><%=request.getParameter("dtPartida")%></span>
+                                </fieldset>                                    
+                            </div>
                             <div class="horaVoo">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Hora Embarque</legend>
-                                        <span><%=request.getParameter("dtPartida")%></span>
-                                    </fieldset>                                    
-                             </div>                            
-                             <div class="numVoo">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Voo</legend>
-                                        <span><%=request.getParameter("numVoo")%></span>
-                                    </fieldset>                                    
-                             </div>
-                             <div class="assentoEspecial">
-                                    <fieldset class="bilheteFieldset">
-                                        <legend>Assento Especial</legend>
-                                        <span><%=request.getParameter("assentoEspecial")%></span>
-                                    </fieldset>                                    
-                             </div> 
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Hora Embarque</legend>
+                                    <span><%=request.getParameter("dtPartida")%></span>
+                                </fieldset>                                    
+                            </div>                            
+                            <div class="numVoo">
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Voo</legend>
+                                    <span><%=request.getParameter("numVoo")%></span>
+                                </fieldset>                                    
+                            </div>
+                            <div class="assentoEspecial">
+                                <fieldset class="bilheteFieldset">
+                                    <legend>Assento Especial</legend>
+                                    <span><%=request.getParameter("assentoEspecial")%></span>
+                                </fieldset>                                    
+                            </div> 
                         </div>
                         <div class="bilheteRight">
                             <div class="bilheteSummary">
                                 <div class="bilheteDestaque">
-                                    <span>Nome</span>
-                                    <span class="destaqueDados"><%=request.getParameter("nomePassageiro")%></span>
-                                    <span>Idade</span>
-                                    <span class="destaqueDados"><%=request.getParameter("idadePassageiro")%></span>
-                                    <span>Trecho</span>
-                                    <span class="destaqueDados"><%=trecho%></span>
-                                    <span>Classe</span>
-                                    <span class="destaqueDados"><%=request.getParameter("")%></span>
-                                    <span>Data de Embarque</span>
-                                    <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
-                                    <span>Hora Embarque</span>
-                                    <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
-                                    <span>Voo</span>
-                                    <span class="destaqueDados"><%=request.getParameter("numVoo")%></span>
-                                    <span>Assento Especial</span>      
-                                    <span class="destaqueDados"><%=request.getParameter("assentoEspecial")%></span>
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Nome</span>
+                                        <span class="destaqueDados"><%=request.getParameter("nomePassageiro")%></span>
+                                    </div>
+                                    <br/>
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Idade</span>
+                                        <span class="destaqueDados"><%=request.getParameter("idadePassageiro")%></span>
+                                    </div>
+                                    <div style="display: inline-block; float:right;">
+                                        <span class="destaqueTitle">Classe</span>
+                                        <span class="destaqueDados"><%=request.getParameter("")%></span>
+                                    </div>
+                                    <br/>
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Trecho</span>
+                                        <span class="destaqueDados"><%=trecho%></span>    
+                                    </div>  
+                                    <br/>
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Data de Embarque</span>
+                                        <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
+                                    </div>  
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Hora Embarque</span>
+                                        <span class="destaqueDados"><%=request.getParameter("dtPartida")%></span>
+                                    </div>  
+                                    <br/>
+                                    <div style="display: inline-block;">
+                                        <span class="destaqueTitle">Voo</span>
+                                        <span class="destaqueDados"><%=request.getParameter("numVoo")%></span>
+                                    </div>  
+                                    <div style="display: inline-block; float:right;">
+                                        <span class="destaqueTitle">Assento Especial</span>      
+                                        <span class="destaqueDados"><%=request.getParameter("assentoEspecial")%></span>
+                                    </div>  
                                 </div>                                
                             </div>
                         </div>                        
                     </div>
+                    <br/>
+                    <input type="button" onclick="printSelection(document.getElementById('bilhete'));" value="Imprimir"/>
                 </div>
 
             </div>
@@ -126,5 +148,21 @@
             <p>Copyright (c) 2013 Mackenzie 6J. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
         </div>
     </body>
-    
+    <script type="text/javascript">
+                        function printSelection(node) {
+
+                            var content = node.innerHTML;
+                            var pwin = window.open('', 'print_content', 'width=100,height=100');
+
+                            pwin.document.open();
+                            pwin.document.write('<html><link rel="stylesheet" type="text/css" href="css/bilhete.css"/><body onload="window.print()">' + content + '</body></html>');
+                            pwin.document.close();
+
+                            setTimeout(function() {
+                                pwin.close();
+                            }, 1000);
+
+                        }
+
+    </script>
 </html>
