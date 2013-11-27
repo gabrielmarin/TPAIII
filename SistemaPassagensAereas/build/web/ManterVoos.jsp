@@ -43,13 +43,13 @@
                             <label style="display:block; padding-top: 10px;">Assentos primeira classe</label>
                             <input type="text" id="assentosPClasDisponiveis" name="assentosPClasDisponiveis" max="3" class="required numeric"></input>
                             <label style="display:block; padding-top: 10px;">Data Partida</label>
-                            <input type="text" id="dtHrPartida" name="dtPartida" class="required"></input>
+                            <input type="text" id="dtPartida" name="dtPartida" class="required"></input>
                             <label style="display:block; padding-top: 10px;">Hora Partida</label>
-                            <input type="text" id="dtHrPartida" name="hrPartida" max="2" class="required numeric"></input>
+                            <input type="text" id="hrPartida" name="hrPartida" max="2" class="required numeric"></input>
                             <label style="display:block; padding-top: 10px;">Data Chegada</label>
-                            <input type="text" id="dtHrChegada" name="dtChegada" class="required"></input>
+                            <input type="text" id="dtChegada" name="dtChegada" class="required"></input>
                             <label style="display:block; padding-top: 10px;">Hora Chegada</label>
-                            <input type="text" id="dtHrPartida" name="hrChegada" max="2" class="required numeric"></input>
+                            <input type="text" id="hrChegada" name="hrChegada" max="2" class="required numeric"></input>
                             <label style="display:block; padding-top: 10px;">Duração</label>
                             <input type="text" id="duracao" name="duracao"  class="required"></input>
                             <label style="display:block; padding-top: 10px;">Aeronave</label>
@@ -114,8 +114,10 @@
                                         numVoo: $('#numVoo').val(),
                                         assentosEconDisponiveis: $('#assentosEconDisponiveis').val(),
                                         assentosPClasDisponiveis: $('#assentosPClasDisponiveis').val(),
-                                        partida: $('#dtHrPartida').val(),
-                                        chegada: $('#dtHrChegada').val(),
+                                        dtPartida: $('#dtPartida').val(),
+                                        dtChegada: $('#dtChegada').val(),
+                                        hrChegada: $('#hrChegada').val(),
+                                        hrPartida: $('#hrPartida').val(),
                                         duracao: $('#duracao').val(),
                                         aeronave: $('#ddlAeronaves :selected').val(),
                                         trecho: $('#ddlTrecho :selected').val()
@@ -128,8 +130,27 @@
                                     validate('formCadastroVoo');
 
                                     if (validateState) {
-                                        inserirNovoVoo();
+                                       try{ 
+                                           inserirNovoVoo();                                           
+                                           alert("Voo inserido com sucesso!");
+                                       } catch(e){
+                                           alert(e);
+                                       }
                                     }
+                                }
+                                
+                                function limparCampos()
+                                {
+                                    $('#numVoo').empty();
+                                    $('#assentosEconDisponiveis').empty();
+                                    $('#assentosPClasDisponiveis').empty();
+                                    $('#dtPartida').empty();
+                                    $('#dtChegada').empty();
+                                    $('#hrChegada').empty();
+                                    $('#hrPartida').empty();
+                                    $('#duracao').empty();
+                                    $('#ddlAeronaves :selected').empty();
+                                    $('#ddlTrecho :selected').empty();
                                 }
 
                                 $(function() {

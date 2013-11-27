@@ -1,5 +1,7 @@
-
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="Repository.CidadeRepository"%>
+<%@page import="Repository.AeroportoRepository"%>
+<%@page import="Model.Aeroporto"%>
 <%@page import="Model.Cidade"%>
 <%@page import="Model.Voo"%>
 <%@page import="java.util.List"%>
@@ -46,13 +48,16 @@
                     <table width="80%">
                         <tr>
                             <td>
+                                
+                            </td>
+                            <td>
                                 Nº do Voo
                             </td>
                             <td>
-                                Origem
+                                Origem / Aeroporto
                             </td>
                             <td>
-                                Destino
+                                Destino / Aeroporto
                             </td>
                             <td>
                                 Partida
@@ -96,22 +101,29 @@
                                 Voo flight = (Voo) voo;
                                 String cityOrigem = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeOrigem());
                                 String cityDestino = new CidadeRepository().GetCidadeById(flight.getTrecho().getIdCidadeDestino());
+                                String AeroOrigem = new AeroportoRepository().GetAeroportoByIdCity(flight.getTrecho().getIdCidadeOrigem());
+                                String AeroDestino = new AeroportoRepository().GetAeroportoByIdCity(flight.getTrecho().getIdCidadeDestino());
+                                String newDatePart = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(flight.getPartida());
+                                String newDateCheg = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(flight.getChegada());
                         %>
                         <tr>
+                            <td>
+                                <a href="buyVoo.jsp?numVoo=<%=flight.getNumVoo()%>">Selecionar</a>
+                            </td>
                             <td >
                                 <%=flight.getNumVoo()%>
                             </td>
                             <td>
-                                <%=cityOrigem%>
+                                <%=cityOrigem%> / <%=AeroOrigem%>
                             </td>
                             <td>
-                                <%=cityDestino%>
+                                <%=cityDestino%> / <%=AeroDestino%>
                             </td>
                             <td>
-                                <%=flight.getPartida()%>
+                                <%=newDatePart%>
                             </td>
                             <td>
-                                <%=flight.getChegada()%>
+                                <%=newDateCheg%>
                             </td>
                             <td>
                                 <%=flight.getDuracao()%> hora

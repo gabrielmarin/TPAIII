@@ -41,6 +41,6 @@ INSERT INTO trecho 	 (id,distancia,idCidadeDestino,idCidadeOrigem)
 			VALUES	 (2,366,1,2);
 INSERT INTO trecho 	 (id,distancia,idCidadeDestino,idCidadeOrigem)
 			VALUES	 (3,2100,3,6);
-			
+
 INSERT INTO voo		(id,chegada,partida,numVoo,aeronave_id,trecho_id,duracao,assentosPClasDisponiveis,assentosEconDisponiveis)
 			VALUES	(1,'2013-10-30 4:00:00','2013-10-30 5:00:00',123,1,1,1,25,200)
