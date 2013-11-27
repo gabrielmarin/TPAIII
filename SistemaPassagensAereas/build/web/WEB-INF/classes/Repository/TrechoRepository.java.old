@@ -1,0 +1,21 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Repository;
+
+import Model.Trecho;
+import Util.HibernateUtil;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class TrechoRepository {
+    public Trecho GetTrecho () {
+        
+        
+        return null;
+    }
+}
